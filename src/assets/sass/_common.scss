@@ -1,0 +1,53 @@
+@use './_reset';
+@use './_mixin' as *;
+
+
+$spw : 750;
+$pcw : 2732;
+
+body{
+    background-color: #f4edde;
+    font-family: ryo-gothic-plusn, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+
+.content{
+    overflow: hidden;
+}
+
+.pc{
+    display: none;
+}
+.sp{
+    display: block;
+}
+
+@include pc{
+    .pc{
+        display: block;
+    }
+    .sp{
+        display: none;
+    } 
+}
+
+$red : #c6133a;
+$txt : #504030;
+$main : #f4edde;
+
+.en{
+    font-family: canada-type-gibson, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.en_g{
+    font-family: cinema-script, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

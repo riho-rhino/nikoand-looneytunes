@@ -1,5 +1,11 @@
 @use './_reset';
 @use './_mixin' as m;
-
-// modeuls
-@use './_modules/_test';
+@use './_common';
+@use './_mv';
+@use './_main';
+@use './_footer';
+@use './_modal-item';
+@use './_modal-chara';
+@use './_modal-food';
+@use './_parts';
+@use './_pc';

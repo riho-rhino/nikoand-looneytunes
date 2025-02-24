@@ -1,0 +1,215 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.top{
+    @include pc{
+        display: flex;
+        vertical-align: middle;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding-bottom: calc(325 / c.$pcw) * 100%;
+        .mv_left-wrap,
+        .mv_right-wrap{
+            width: calc(880 / c.$pcw) * 100%;
+            max-width: 880px;
+        }
+        .mv_center-wrap{
+            width: calc(975 / c.$pcw) * 100%;
+            max-width: 975px;
+        }
+    }
+}
+
+.ttl {
+    width: calc(535 / c.$spw) * 100%;
+    margin: calc(60 / c.$spw) * 100% auto 0;
+    @include pc{
+        width: calc(536 / 880) * 100%;
+        margin: calc(453 / 880) * 100% auto 0;
+    }
+}
+
+.mv_img {
+    width: calc(640 / c.$spw) * 100%;
+    margin: calc(42 / c.$spw) * 100% auto 0;
+    border: solid #000 1px;
+    position: relative;
+    line-height: 0;
+    @include pc{
+        width: 100%;
+        margin: calc(128 / 975) * 100% auto 0;
+    }
+}
+
+.mv_ill {
+    position: absolute;
+    top: 0;
+    width: calc(196 / 640) * 100%;
+    @include pc{
+        width: calc(196 / 640) * 100%;
+    }
+}
+
+.mv_txt_wrap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: calc(-41 / 640) * 100%;
+    margin-bottom: calc(-26 / 640) * 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(113 / 640) * 100%;
+    @include pc{
+        width: calc(175 / 975) * 100%;
+    }
+
+    .mv_txt {
+        width: calc(55 / 113) * 100%;
+        @include pc{
+            width: calc(82 / 175) * 100%;
+        }
+    }
+
+}
+
+.mv_ill-1 {
+    left: 0;
+    margin-left: calc(-60 / 640) * 100%;
+    margin-top: calc(-35 / 640) * 100%;
+    @include pc{
+        margin-left: -15%;
+        margin-top: -7%;
+    }
+}
+
+.mv_ill-2 {
+    right: 0;
+    margin-right: calc(-67 / 640) * 100%;
+    margin-top: calc(-71 / 640) * 100%;
+    @include pc{
+        margin-right: -15%;
+        margin-top: -10%;
+    }
+}
+
+
+.wb_caption {
+    width: calc(505 / c.$spw) * 100%;
+    margin: calc(37 / c.$spw) * 100% auto 0;
+    line-height: 0;
+}
+
+.mv_illwrap {
+    display: flex;
+    justify-content: space-between;
+    width: calc(680 / c.$spw) * 100%;
+    margin: calc(5 / c.$spw) * 100% auto 0;
+    @include pc{
+        display: none;
+    }
+
+}
+.mv_ill-3 {
+    width: calc(220 / 680) * 100%;
+    @include pc{
+        position: absolute;
+        width: calc(432 / 975) * 100%;
+        bottom: 0;
+        left: 0;
+        margin-bottom: -27%;
+        margin-left: -34%;
+    }
+}
+
+.poof {
+    width: calc(105 / 680) * 100%;
+    margin: calc(-9 / 680) * 100% calc(9 / 680) * 100% 0 auto;
+    @include pc{
+        position: absolute;
+        width: calc(243 / 975) * 100%;
+        margin: 0 -14% -33% 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+
+
+.lead {
+    margin-top: calc(24 / c.$spw) * 100%;
+    font-size: calc(28 / c.$spw * 100vw);
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 500;
+    @include pc{
+        font-size: calc(28 / c.$pcw * 100vw);
+    }
+}
+
+
+.about {
+    margin-top: calc(118 /c.$spw) * 100%;
+    padding-top: calc(460 / c.$spw) * 100%;
+    position: relative;
+    @include pc{
+        margin-top: calc(372 / 880) * 100%;
+        padding-top: calc(381 / 880) * 100%;
+    }
+
+    .about_ill {
+        width: calc(334 / c.$spw) * 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @include pc{
+            width: calc(296 / 880) * 100%;
+        }
+    }
+
+    .about_wrap {
+        width: calc(590 / c.$spw) * 100%;
+        margin: 0 auto;
+        text-align: center;
+        background: #fff;
+        border: solid 1px #000;
+        border-radius: 15px;
+
+        .whats {
+            line-height: 1;
+            padding-top: calc(56 / 590) * 100%;
+            color: c.$red;
+            font-size: calc(36 / c.$spw * 100vw);
+            @include pc{
+                font-size: calc(36 / c.$pcw * 100vw);
+            }
+        }
+
+        h2 {
+            line-height: 1;
+            padding-top: calc(15 / 590) * 100%;
+            color: c.$red;
+            font-size: calc(56 / c.$spw * 100vw);
+            @include pc{
+                font-size: calc(56 / c.$pcw * 100vw);
+            }
+        }
+
+        .about_txt {
+            padding-top: calc(30 / 590) * 100%;
+            padding-bottom: calc(48 / 590) * 100%;
+            white-space: nowrap;
+            line-height: 1.7;
+            font-feature-settings: "palt";
+            font-size: calc(24 / c.$spw * 100vw);
+            font-family: YakuHanJP, "ryo-gothic-plusn", "sans-serif";
+            @include pc{
+                font-size: calc(24 / c.$pcw * 100vw);
+            }
+        }
+    }
+}
+
+

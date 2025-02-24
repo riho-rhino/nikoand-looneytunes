@@ -1,15 +1,25 @@
 <!-- <img src="<%= rootURL %>" alt=""> -->
 <div class="contents">
-    <%- include('./_mv.ejs') %> 
     <div class="wrapper">
-        <%- include('./_main.ejs') %> 
+        <%- include('./_mv.ejs') %> 
+        
+        <div class="main_subttl en_g">
+            Line up for
+        </div>
+        <div class="main_ttl en">
+            COLLABORATION<br>
+            ITEMS
+        </div>
+        <div class="main" id="main">
+            <%- include('./_main.ejs') %> 
+        </div>
         <%- include('./_food.ejs') %> 
         <%- include('./_footer.ejs') %> 
     </div>
+    <%- include('./_modal-chara.ejs') %> 
+    <%- include('./_modal-item.ejs') %> 
+    <%- include('./_modal-food.ejs') %> 
 </div>
-<%- include('./_modal-chara.ejs') %> 
-<%- include('./_modal-item.ejs') %> 
-<%- include('./_modal-food.ejs') %> 
 
 
 <script src="<%= rootURL %>/assets/js/index.js"></script>
