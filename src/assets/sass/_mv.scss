@@ -24,6 +24,10 @@
 .ttl {
     width: calc(535 / c.$spw) * 100%;
     margin: calc(60 / c.$spw) * 100% auto 0;
+    line-height: 0;
+    img{
+        scale: 0;
+    }
     @include pc{
         width: calc(536 / 880) * 100%;
         margin: calc(453 / 880) * 100% auto 0;
@@ -33,9 +37,17 @@
 .mv_img {
     width: calc(640 / c.$spw) * 100%;
     margin: calc(42 / c.$spw) * 100% auto 0;
-    border: solid #000 1px;
     position: relative;
     line-height: 0;
+    .mv{
+        border: solid #000 1px;
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    // .mv{
+    //     border: solid #000 1px;
+    //     clip-path: circle(0 at 50% 50%);
+    // }
     @include pc{
         width: 100%;
         margin: calc(128 / 975) * 100% auto 0;
@@ -61,6 +73,14 @@
     justify-content: space-between;
     align-items: flex-start;
     width: calc(113 / 640) * 100%;
+    .mv_txt-2{
+        clip-path: inset(0 0 100% 0);
+        transition: clip-path .6s .5s ease;
+    }
+    .mv_txt-1{
+        clip-path: inset(0 0 100% 0);
+        transition: clip-path .6s .4s ease;
+    }
     @include pc{
         width: calc(175 / 975) * 100%;
     }
@@ -78,6 +98,8 @@
     left: 0;
     margin-left: calc(-60 / 640) * 100%;
     margin-top: calc(-35 / 640) * 100%;
+    transform: scale(0,0) rotate(0deg);
+    transition: all .5s 1s ease;
     @include pc{
         margin-left: -15%;
         margin-top: -7%;
@@ -88,6 +110,8 @@
     right: 0;
     margin-right: calc(-67 / 640) * 100%;
     margin-top: calc(-71 / 640) * 100%;
+    transform: scale(0,0) rotate(0deg);
+    transition: all .5s 1s ease;
     @include pc{
         margin-right: -15%;
         margin-top: -10%;
@@ -99,6 +123,10 @@
     width: calc(505 / c.$spw) * 100%;
     margin: calc(37 / c.$spw) * 100% auto 0;
     line-height: 0;
+    @include pc{
+        opacity: 0;
+        transition: .5s 1.5s ease;
+    }
 }
 
 .mv_illwrap {
@@ -111,27 +139,46 @@
     }
 
 }
+
+.mv_illwrap-sp{
+    &.show{
+        .mv_ill-3,.poof{
+            transform: rotate(0) scale(1,1);
+        }
+    }
+}
+
 .mv_ill-3 {
     width: calc(220 / 680) * 100%;
+    transform: rotate(360deg) scale(0,0);
+    transition: all .5s ease;
     @include pc{
+        transform: rotate(0) scale(1,1);
         position: absolute;
         width: calc(432 / 975) * 100%;
         bottom: 0;
         left: 0;
         margin-bottom: -27%;
         margin-left: -34%;
+        opacity: 0;
+        transition: .5s 1.5s ease;
     }
 }
 
 .poof {
     width: calc(105 / 680) * 100%;
     margin: calc(-9 / 680) * 100% calc(9 / 680) * 100% 0 auto;
+    transform: rotate(360deg) scale(0,0);
+    transition: all .5s ease;
     @include pc{
+        transform: rotate(0) scale(1,1);
         position: absolute;
         width: calc(243 / 975) * 100%;
         margin: 0 -14% -33% 0;
         right: 0;
         bottom: 0;
+        opacity: 0;
+        transition: .5s 1.5s ease;
     }
 }
 
@@ -145,6 +192,8 @@
     font-weight: 500;
     @include pc{
         font-size: calc(28 / c.$pcw * 100vw);
+        opacity: 0;
+        transition: opacity .5s 1.5s linear;
     }
 }
 
@@ -153,9 +202,47 @@
     margin-top: calc(118 /c.$spw) * 100%;
     padding-top: calc(460 / c.$spw) * 100%;
     position: relative;
+    &.show{
+        .about_wrap {
+            .about_txt{
+                opacity: 1;
+            }
+
+        }
+        .about_1{
+            img{
+                transform: translateX(-50px) rotate(-10deg);
+            }
+        }
+        .about_2{
+            img{
+                transform: translateX(40px) rotate(10deg);
+            }
+        }
+    }
     @include pc{
         margin-top: calc(372 / 880) * 100%;
         padding-top: calc(381 / 880) * 100%;
+        opacity: 0;
+        transition: opacity .5s 1.5s linear;
+    }
+    .about_1{
+        img{
+            transform: translateX(0px) rotate(0deg);
+            transition: transform .5s 1s linear;
+            @include pc{
+                transition: transform .5s 2s linear;
+            }
+        }
+    }
+    .about_2{
+        img{
+            transform: translateX(0px) rotate(0deg);
+            transition: transform .5s 1s linear;
+            @include pc{
+                transition: transform .5s 2s linear;
+            }
+        }
     }
 
     .about_ill {
@@ -205,11 +292,79 @@
             font-feature-settings: "palt";
             font-size: calc(24 / c.$spw * 100vw);
             font-family: YakuHanJP, "ryo-gothic-plusn", "sans-serif";
+            opacity: 0;
+            transition: all .3s 0.5s ease;
             @include pc{
+                opacity: 1;
                 font-size: calc(24 / c.$pcw * 100vw);
             }
         }
     }
 }
 
+
+.contents{
+    &.start{
+        .ttl{
+            img{
+                animation: opAnimetion .5s linear both;
+            }
+        }
+        .mv_img{
+            .mv{
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+        }
+        .mv_txt_wrap{
+            .mv_txt-2{
+                clip-path: inset(0);
+            }
+            .mv_txt-1{
+                clip-path: inset(0);
+            }
+        }
+        .mv_ill-1,.mv_ill-2{
+            transform: scale(1,1) rotate(360deg);
+        }
+        @include pc{
+        
+            .lead,.about,.wb_caption,.mv_ill-3,.poof{
+                    opacity: 1;
+                }
+
+            .about_1{
+                img{
+                    transform: translateX(-50px) rotate(-10deg);
+                }
+            }
+            .about_2{
+                img{
+                    transform: translateX(40px) rotate(10deg);
+                }
+            }
+        }
+        
+    }
+}
+
+
+@keyframes opAnimetion {
+    0% {
+        scale: 0;
+    }
+    
+    70% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+// @keyframes illShow{
+//     0%{
+
+//     }
+// }
 

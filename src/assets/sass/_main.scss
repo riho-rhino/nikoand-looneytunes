@@ -347,6 +347,8 @@
 }
 
 .item_10{
+    position: relative;
+    z-index: 100;
     .item_ph{
         width: calc(794 / c.$spw) * 100%;
         margin-top: calc(-119 / c.$spw) * 100%;
@@ -988,8 +990,14 @@
     @include pc{
         z-index: 100;
         width: calc(651 / c.$pcw) * 100%;
-        margin-top: calc(80 / c.$pcw) * 100%;
-        margin-right: calc(51 / c.$pcw) * 100%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        width: 23.8286969253%;
+        margin-top: unset;
+        margin-right: 1.8667642753%;
+        margin-bottom: -14%;
         .item_arrow{
             width: 30px;
             margin-top: -2%;

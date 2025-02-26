@@ -1,7 +1,21 @@
 <!-- <img src="<%= rootURL %>" alt=""> -->
 <div class="contents">
-    <div class="wrapper">
-        <%- include('./_mv.ejs') %> 
+    <div class="anchor">
+        <ul class="anchor-link">
+            <li>
+                <a href="#items">
+                    <span class="anchor_en en">ZAKKA</span><span class="anchor_jp ja">雑貨</span>
+                </a>
+            </li>
+            <li>
+                <a href="#food">
+                    <span class="anchor_en en">FOOD</span><span class="anchor_jp ja">フード</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <%- include('./_mv.ejs') %> 
+    <div class="wrapper" id="items">
         
         <div class="main_subttl en_g">
             Line up for
@@ -10,15 +24,20 @@
             COLLABORATION<br>
             ITEMS
         </div>
-        <div class="main" id="main">
+        <div class="main item-list">
             <%- include('./_main.ejs') %> 
         </div>
-        <%- include('./_food.ejs') %> 
+        <%- include('./_other.ejs') %> 
+        <%- include('./_foot.ejs') %> 
         <%- include('./_footer.ejs') %> 
     </div>
-    <%- include('./_modal-chara.ejs') %> 
-    <%- include('./_modal-item.ejs') %> 
-    <%- include('./_modal-food.ejs') %> 
+    <div class="modal_bg">
+        <ul class="modal_item_list">
+        <%- include('./_modal-item.ejs') %> 
+        <%- include('./_modal-chara.ejs') %> 
+        <%- include('./_modal-food.ejs') %> 
+        </ul>
+    </div>
 </div>
 
 

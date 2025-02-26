@@ -1,0 +1,95 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+
+.anchor{
+    position: fixed;
+    top: 0;
+    right: 50%;
+    transform: translate(50%,-150%);
+    margin-top: 20px;
+    width: calc(519 / c.$spw) * 100%;
+    border: solid 1px #000;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all .5s linear;
+    &.active{
+        transform: translate(50%,0%);
+        @include pc{
+            transform: translate(0,0);
+        }
+    }
+    
+
+    .anchor-link{
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        &::after{
+            content: "";
+            width: 1px;
+            background: #c6133a;
+            height: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        li{
+            a{
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+                padding: 15px 0;
+                gap: 7px;
+                span{
+                    display: block;
+                }
+                .anchor_en{
+                    color: #c6133a;
+                    font-size: calc(36 / c.$spw * 100vw);
+                    line-height: 1;
+                }
+                .anchor_jp{
+                    font-size: calc(24 / c.$spw * 100vw);
+                    line-height: 1;
+                    color: #000;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    @include pc{
+        width: calc(519 / c.$pcw) * 100%;
+        max-width: 260px;
+        transition: all .3s linear;
+        right: 0;
+        transform: translate(0,-150%);
+        margin: 20px 20px 0 0;
+        .anchor-link{
+            li{
+                a{
+                    .anchor_en{
+                        font-size: min(calc(36 / c.$pcw * 100vw),18px);
+                    }
+                    .anchor_jp{
+                        font-size: min(calc(24 / c.$pcw * 100vw),12px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contents{
+    &.active{
+        .anchor{
+            @include pc{
+                transform: translate(0,0);
+            }
+        }
+    }
+}
